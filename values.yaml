@@ -81,6 +81,8 @@ tolerations: []
 
 affinity: {}
 
+strategy: {}
+
 persistent:
   enabled: true
   storage: 1Gi
@@ -95,5 +97,6 @@ containers:
   volumeMounts:
     - mountPath: /home/project
       name: volume-theia
+
 
 configMap: {}

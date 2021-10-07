@@ -8,6 +8,10 @@ spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
+  {{- with .Values.strategy }}
+  strategy:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
   selector:
     matchLabels:
       {{- include "theia-helm.selectorLabels" . | nindent 6 }}
@@ -48,7 +52,6 @@ spec:
           ports:
             {{- toYaml . | nindent 12 }}
           {{- end }}
-          
           {{- if .Values.persistent.enabled }}
           {{- with .Values.containers.volumeMounts}}
           volumeMounts:
