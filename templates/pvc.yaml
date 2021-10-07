@@ -1,0 +1,14 @@
+{{- if .Values.persistent.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "theia-helm.fullname" . }}
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.persistent.storage }}
+  storageClassName: {{ .Values.persistent.storageClassName }}
+  volumeMode: Filesystem
+{{- end }}
