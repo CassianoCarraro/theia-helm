@@ -4,5 +4,5 @@ kind: ConfigMap
 metadata:
   name: {{ .Values.configMap.name }}
 data:
-  config.yaml: {{ .Values.configMap.data }}
+  listar.sh: {{ .Values.configMap.data }}
 {{- end }}

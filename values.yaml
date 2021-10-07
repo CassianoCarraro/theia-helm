@@ -98,5 +98,4 @@ containers:
     - mountPath: /home/project
       name: volume-theia
 
-
 configMap: {}
