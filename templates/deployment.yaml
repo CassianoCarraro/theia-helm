@@ -35,7 +35,7 @@ spec:
           claimName: {{ .Values.persistent.name }}
       {{- end }}
       {{- if .Values.configMap }}
-      - name: config
+      - name: {{ .Values.configMap.name }}
         configMap:
           name: {{ .Values.configMap.name }}
       {{- end }}
