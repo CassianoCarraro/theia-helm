@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ include "theia-helm.fullname" . }}
+  name: {{ .Values.persistent.name }}
 spec:
   accessModes:
   - ReadWriteOnce

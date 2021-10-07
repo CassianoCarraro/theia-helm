@@ -85,6 +85,7 @@ persistent:
   enabled: true
   storage: 1Gi
   storageClassName: longhorn
+  name: volume-theia
 
 containers:
   ports:
